@@ -1,7 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from "react";
 import Navbar from "./components/Navbar.jsx"; // Ensure the import path is correct
 import PlayerList from "./components/PlayersList.jsx"; // Make sure the file name is correct, it should be PlayerList if the file is named PlayerList.jsx
+import PlayerCard from "./components/PlayerCard.jsx";
+import PlayerView from "./components/PlayerView.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 
@@ -15,17 +18,57 @@ function Home() {
   )
   }
 
-function App() {
-  return (
-      <div>
-        <Navbar />  {/* This will render the Navbar component at the top */}
-        <Routes>
-          <Route path="/" element={<Home />} /> {/* Home route */}
-          <Route path="/players" element={<PlayerList />} /> {/* Players route */}
-        </Routes>
-      </div>
-    
-  );
+  function App() {
+    const [favoritePlayers, setFavoritePlayers] = useState([]);
+
+    const handleFavoriteToggle = (player) => {
+        setFavoritePlayers((prevFavorites) => {
+            const isAlreadyFavorite = prevFavorites.some(fav => fav.id === player.id);
+            if (isAlreadyFavorite) {
+                return prevFavorites.filter(fav => fav.id !== player.id);
+            } else {
+                return [...prevFavorites, player];
+            }
+        });
+    };
+
+    return (
+        <div>
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route 
+                    path="/players" 
+                    element={
+                        <PlayerList 
+                            onFavoriteToggle={handleFavoriteToggle} 
+                            favoritePlayers={favoritePlayers} 
+                        />
+                    } 
+                />
+                <Route 
+                    path="/favorites" 
+                    element={
+                        <div className="container mt-4">
+                            <h1>Favorite Players</h1>
+                            <div className="row">
+                                {favoritePlayers.map(player => (
+                                    <div key={player.id} className="col-sm-12 col-md-6 col-lg-4">
+                                        <PlayerCard 
+                                            player={player} 
+                                            onFavoriteToggle={handleFavoriteToggle} 
+                                            isFavorite={true} 
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    } 
+                />
+                <Route path="/player-view" element={<PlayerView />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;

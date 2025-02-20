@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PlayerCard from './PlayerCard.jsx';
 
 
-function PlayerList() {
+function PlayerList({ onFavoriteToggle, favoritePlayers }) {
     const [players, setPlayers] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -12,14 +12,11 @@ function PlayerList() {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
-                console.log(response)
                 return response.json();
-                
             })
             .then(data => {
                 setPlayers(data);
                 setLoading(false);
-                console.log(data)
             })
             .catch(error => {
                 console.error("Error fetching players:", error);
@@ -30,17 +27,20 @@ function PlayerList() {
     if (loading) return <p>Loading...</p>;
 
     return (
-      <div className="container mt-4">
-          <div className="row">
-              {players.map(player => (
-                  <div key={player.id} className="col-sm-12 col-md-6 col-lg-4">
-                      <PlayerCard player={player} />
-                  </div>
-              ))}
-          </div>
-      </div>
-  );
+        <div className="container mt-4">
+            <div className="row">
+                {players.map(player => (
+                    <div key={player.id} className="col-sm-12 col-md-6 col-lg-4">
+                        <PlayerCard 
+                            player={player} 
+                            onFavoriteToggle={onFavoriteToggle} 
+                            isFavorite={favoritePlayers.some(fav => fav.id === player.id)} 
+                        />
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 }
-
 
 export default PlayerList;

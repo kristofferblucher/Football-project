@@ -5,7 +5,7 @@ import '../App.css'; // Import your custom styles if they are not imported at a 
 
 function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav  className="navbar navbar-expand-lg navbar-dark bg-dark">
             <Link className="navbar-brand header" to="/">Fantasy Premier League Helper-App</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -20,6 +20,9 @@ function Navbar() {
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/about">About</Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link className='nav-link' to="/favorites"> Favorites</Link> 
                     </li>
                 </ul>
             </div>
