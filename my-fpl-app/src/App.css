@@ -1,21 +1,21 @@
-/* Global Styles */
+
 body {
-  background-color: #e1e7ee;  /* A light gray background for the whole page */
-  color: #333; /* Default text color */
-  font-family: 'Arial', sans-serif; /* Consistent font throughout the app */
+  background-color: #e1e7ee;  
+  color: #333; 
+  font-family: 'Arial', sans-serif; 
 }
 
 h1 {
   text-align: center;
-  font-weight: bold; /* Makes text bold */
-  margin-top: 40px; /* Adds space above the h1 */
+  font-weight: bold;
+  margin-top: 40px; 
 }
 
 h5 {
   text-align: center;
 }
 
-/* General Card Styling */
+
 .card {
   background: #ffffff;
   border: 1px solid #ddd;
@@ -27,16 +27,16 @@ h5 {
 
 .custom-card {
   padding: 15px;
-  margin: 10px auto; /* Center cards in the column */
-  width: 100%; /* Full width of the column */
-  max-width: 350px; /* Adjusted width for balanced look */
+  margin: 10px auto; 
+  width: 100%;
+  max-width: 350px; 
   border-radius: 10px;
   position: relative;
-  overflow: hidden; /* Ensure images don't overflow */
-  min-height: 450px; /* Set a minimum height to keep cards consistent */
+  overflow: hidden; 
+  min-height: 450px; 
 }
 
-/* Hover effect */
+
 .custom-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -52,7 +52,7 @@ h5 {
   
 }
 
-/* Ensure the player title is centered */
+
 #id-card-title {
   font-weight: bold;
   color: #333;
@@ -66,16 +66,16 @@ h5 {
  
 }
 
-/* Container for the text content */
+
 .card-text-container {
   width: 100%;
-  max-width: 250px; /* Optional: Limit text width for better alignment */
-  text-align: left; /* Aligns all text to the left */
+  max-width: 250px; 
+  text-align: left; 
   display: flex;
   flex-direction: column;
 }
 
-/* Card text styles */
+
 .card-text {
   color: #555;
   font-size: 0.95rem;
@@ -84,11 +84,11 @@ h5 {
 
 
 
-/* Navbar Styling */
+
 .navbar {
-  background-color: #004d99; /* Custom dark blue */
+  background-color: #004d99; 
   color: white;
-  border-bottom: 3px solid #002d5a; /* Deeper shade for a subtle depth effect */
+  border-bottom: 3px solid #002d5a; 
   opacity: 0.6;
 }
 
@@ -104,35 +104,35 @@ h5 {
 }
 
 .nav-link:hover {
-  color: #cceeff; /* Light blue for hover */
+  color: #cceeff; 
   background-color: rgba(100, 96, 96, 0.699);
   border-style: ridge;
 }
 
 .navbar-toggler {
-  border-color: #aadfff; /* Light blue to match the hover color */
+  border-color: #aadfff; 
 }
 
 .nav-item {
   margin-left: 20px;
 }
 
-/* Home page styling */
+
 .home-container {
   text-align: center;
   margin-top: 50px;
 }
 
 .home-image {
-  width: 600px;  /* Adjust width as needed */
-  height: auto;  /* Keeps aspect ratio */
+  width: 600px;  
+  height: auto;  
   margin-top: 30px;
 }
 
 
-/* Style the player card */
+
 .custom-card {
-  position: relative;  /* Allows absolute positioning inside */
+  position: relative;  
   padding: 15px;
   margin: 10px auto;
   width: 100%;
@@ -141,7 +141,7 @@ h5 {
   transition: all 0.3s ease-in-out;
 }
 
-/* Position the team logo in the top-right corner */
+
 .team-logo-container {
   position: absolute;
   top: 10px;
@@ -150,7 +150,7 @@ h5 {
   height: 50px;
 }
 
-/* Ensure the logo fits well */
+
 .team-logo {
   width: 100%;
   height: 100%;
@@ -160,7 +160,7 @@ h5 {
   padding: 5px;
 }
 
-/* Player image styling */
+
 .player-image-container {
   display: flex;
   justify-content: center;
@@ -170,8 +170,8 @@ h5 {
 
 .player-image {
   width: 100%;
-  max-width: 200px; /* Keep image size balanced */
-  height: auto;
+  max-width: 200px; 
+  height: auto
   border-radius: 10px;
 }
 

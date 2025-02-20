@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import '../App.css'; // Import your custom styles if they are not imported at a higher level
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import '../App.css'; 
 
 function Navbar() {
     return (

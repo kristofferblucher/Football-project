@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from "react";
-import Navbar from "./components/Navbar.jsx"; // Ensure the import path is correct
-import PlayerList from "./components/PlayersList.jsx"; // Make sure the file name is correct, it should be PlayerList if the file is named PlayerList.jsx
+import Navbar from "./components/Navbar.jsx"; 
+import PlayerList from "./components/PlayersList.jsx"; 
 import PlayerCard from "./components/PlayerCard.jsx";
 import PlayerView from "./components/PlayerView.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
