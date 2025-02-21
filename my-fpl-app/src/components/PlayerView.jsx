@@ -31,11 +31,16 @@ function PlayerView() {
             </div>
 
             <div className="player-stats-container">
+                <p><strong>Team:</strong> {player.team}</p>
                 <p><strong>Price:</strong> £{player.price / 10}m</p>
                 <p><strong>Total Points:</strong> {player.totalPoints}</p>
                 <p><strong>Goals:</strong> {player.goals}</p>
                 <p><strong>Assists:</strong> {player.assists}</p>
-                <p><strong>Team:</strong> {player.team}</p>
+                <p><strong>Expected Goals:</strong> {player.expectedGoals}</p>
+                <p><strong>Expected Goals Per 90:</strong> {player.expectedGoalsPer90}</p>
+                <p><strong>Expected Assists:</strong> {player.expectedAssists}</p>
+                <p><strong>Expected Assists Per 90:</strong> {player.expectedAssistsPer90}</p>
+                <p><strong>Expected Goal Involvements:</strong> {player.expectedGoalInvolvements}</p>
             </div>
         </div>
     );

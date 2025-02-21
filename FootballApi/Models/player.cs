@@ -20,6 +20,22 @@ public class Player
     public int Goals { get; set; }
     [JsonProperty("assists")]
     public int Assists { get; set; }
+    [JsonProperty("expected_goals")]
+    public string ExpectedGoals { get; set; }
+
+    [JsonProperty("expected_goals_per_90")]
+    public string ExpectedGoalsPer90 {get; set;}
+
+    [JsonProperty("expected_assists")]
+    public string ExpectedAssists {get; set;}
+    
+    [JsonProperty("expected_assists_per_90")]
+    public string ExpectedAssistsPer90 {get; set;}
+
+    
+    [JsonProperty("expected_goal_involvements")]
+    public string ExpectedGoalInvolvements {get; set;}
+
 
     [JsonProperty("photo")]
     public string Photo { get; set; }
