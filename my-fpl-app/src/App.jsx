@@ -92,6 +92,7 @@ function App() {
           }
         />
         <Route path="/player-view/:id" element={<PlayerView />} />
+        <Route path="*" element={<Home />} /> {/* Catch-all route */}
       </Routes>
     </div>
   );

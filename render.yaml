@@ -1,15 +1,15 @@
 services:
   - type: web
-    name: football-frontend
+    name: football-frontend-kblu
     env: static
     staticPublishPath: /dist
     buildCommand: npm install && npm run build
     envVars:
       - key: VITE_API_URL
-        value: "https://football-backend.onrender.com"
+        value: "https://football-backend-kblu.onrender.com"
 
   - type: web
-    name: football-backend
+    name: football-backend-kblu
     env: docker
     plan: free
     dockerfilePath: ./backend/Dockerfile

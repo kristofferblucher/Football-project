@@ -16,7 +16,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowWebApp",
         policy => policy
-            .WithOrigins("http://localhost:5173", "https://football-project.onrender.com") 
+            .WithOrigins("http://localhost:5173", "https://football-project.onrender.com","https://football-frontend-kblu.onrender.com" ) 
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials()); // Added to support cookies and credentials if needed
