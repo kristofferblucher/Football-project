@@ -16,6 +16,6 @@ WORKDIR /app
 COPY --from=build /app/out ./
 
 # Expose port 5000 for the API
-EXPOSE 5000
+EXPOSE 5105
 ENV ASPNETCORE_URLS=http://+:5105
 ENTRYPOINT ["dotnet", "FootballApi.dll"]
