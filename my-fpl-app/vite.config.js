@@ -1,23 +1,13 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  build: {
-    outDir: 'build', // Ensure the build output is in the 'build' directory
-  },
-  base: '/', // Base path for routing
+  base: '/', // Ensure the base path is set correctly
   server: {
-    port: 5173, // Optional: Set the development server port
+    port: 5173, // Local development port
   },
-  // Handle SPA routing
-  resolve: {
-    alias: {
-      '@': '/src',
-    },
-  },
-  esbuild: {
-    jsxInject: `import React from 'react'`,
-  },
+  build: {
+    outDir: 'dist', // Ensure the output directory is correctly set
+  }
 });

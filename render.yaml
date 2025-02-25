@@ -2,7 +2,7 @@ services:
   - type: web
     name: football-frontend
     env: static
-    staticPublishPath: /build
+    staticPublishPath: /dist
     buildCommand: npm install && npm run build
     envVars:
       - key: VITE_API_URL

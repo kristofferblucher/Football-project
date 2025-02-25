@@ -34,11 +34,6 @@ if (app.Environment.IsDevelopment())
 // Apply CORS policy before routing
 app.UseCors("AllowWebApp");
 
-// Apply HTTPS redirection only if HTTPS is configured properly
-if (!app.Environment.IsDevelopment())
-{
-    app.UseHttpsRedirection();
-}
 
 app.UseRouting();
 
