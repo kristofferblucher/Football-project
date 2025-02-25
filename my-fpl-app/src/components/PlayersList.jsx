@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, process } from 'react';
 import PlayerCard from './PlayerCard.jsx';
 
 function PlayerList({ onFavoriteToggle, favoritePlayers }) {
@@ -11,8 +11,13 @@ function PlayerList({ onFavoriteToggle, favoritePlayers }) {
     const [minPrice, setMinPrice] = useState('');
     const [maxPrice, setMaxPrice] = useState('');
 
+    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5105";
+
+fetch(`${API_URL}/players`)
+
+
     useEffect(() => {
-        fetch("http://localhost:5105/players")
+        fetch(`${API_URL}/players`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\KBluch\\Documents\\Football-project\\footballapi\\FootballApi.csproj": {}
+    "C:\\Users\\KBluch\\Documents\\Football-project\\FootballApi\\FootballApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\KBluch\\Documents\\Football-project\\footballapi\\FootballApi.csproj": {
+    "C:\\Users\\KBluch\\Documents\\Football-project\\FootballApi\\FootballApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KBluch\\Documents\\Football-project\\footballapi\\FootballApi.csproj",
+        "projectUniqueName": "C:\\Users\\KBluch\\Documents\\Football-project\\FootballApi\\FootballApi.csproj",
         "projectName": "FootballApi",
-        "projectPath": "C:\\Users\\KBluch\\Documents\\Football-project\\footballapi\\FootballApi.csproj",
+        "projectPath": "C:\\Users\\KBluch\\Documents\\Football-project\\FootballApi\\FootballApi.csproj",
         "packagesPath": "C:\\Users\\KBluch\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KBluch\\Documents\\Football-project\\footballapi\\obj\\",
+        "outputPath": "C:\\Users\\KBluch\\Documents\\Football-project\\FootballApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

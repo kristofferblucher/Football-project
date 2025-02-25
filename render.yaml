@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: football-frontend
+    env: static
+    staticPublishPath: /build
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: REACT_APP_API_URL
+        value: "https://football-backend.onrender.com"
+
+  - type: web
+    name: football-backend
+    env: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
