@@ -15,41 +15,33 @@ public class PlayersController : ControllerBase
         _httpClient = httpClient;
     }
 
-    [HttpGet]
-    public async Task<IActionResult> GetPlayers()
+    [HttpGet("players")]
+public async Task<IActionResult> GetPlayers()
+{
+    string apiUrl = "https://fantasy.premierleague.com/api/bootstrap-static/";
+    
+    try
     {
-        string apiUrl = "https://fantasy.premierleague.com/api/bootstrap-static/";
+        var request = new HttpRequestMessage(HttpMethod.Get, apiUrl);
+        request.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
+
+        var response = await _httpClient.SendAsync(request);
         
-        try
+        if (!response.IsSuccessStatusCode)
         {
-            var response = await _httpClient.GetStringAsync(apiUrl);
-            var fantasyData = JsonConvert.DeserializeObject<FantasyResponse>(response);
-
-            // Deserialize the teams list separately
-            var teamsData = JsonConvert.DeserializeObject<dynamic>(response);
-            var teamsList = JsonConvert.DeserializeObject<List<Team>>(teamsData.teams.ToString());
-
-            // Create a dictionary for quick team lookup (teamId → teamName)
-            var teamLookup = new Dictionary<int, string>();
-            foreach (var team in teamsList)
-            {
-                teamLookup[team.Id] = team.Name;
-            }
-
-            // Assign team names to each player
-            foreach (var player in fantasyData.Elements)
-            {
-                if (teamLookup.ContainsKey(player.TeamId))
-                {
-                    player.Team = teamLookup[player.TeamId];
-                }
-            }
-
-            return Ok(fantasyData.Elements); // Return players with team names
+            var errorContent = await response.Content.ReadAsStringAsync();
+            return StatusCode((int)response.StatusCode, $"Error fetching data: {response.StatusCode} - {errorContent}");
         }
-        catch (HttpRequestException )
-        {
-            return StatusCode(500, "Error fetching data from Fantasy Premier League API.");
-        }
+
+        var responseString = await response.Content.ReadAsStringAsync();
+        var fantasyData = JsonConvert.DeserializeObject<FantasyResponse>(responseString);
+
+        return Ok(fantasyData.Elements);
     }
+    catch (Exception ex)
+    {
+        return StatusCode(500, $"Error fetching data from Fantasy Premier League API. {ex.Message}");
+    }
+}
+
 }
