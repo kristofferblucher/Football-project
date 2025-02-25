@@ -16,7 +16,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowWebApp",
         policy => policy
-            .WithOrigins("http://localhost:5173", "https://football-frontend.onrender.com") // Add your frontend URL here
+            .WithOrigins("http://localhost:5173", "https://football-project.onrender.com") // Add your frontend URL here
             .AllowAnyHeader()
             .AllowAnyMethod());
 });
