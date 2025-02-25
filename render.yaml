@@ -6,7 +6,7 @@ services:
     buildCommand: npm install && npm run build
     envVars:
       - key: VITE_API_URL
-        value: "https://football-backend-kblu.onrender.com"
+        value: "https://football-project.onrender.com"
 
   - type: web
     name: football-backend-kblu
@@ -16,3 +16,4 @@ services:
     envVars:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
+    healthCheckPath: /players
