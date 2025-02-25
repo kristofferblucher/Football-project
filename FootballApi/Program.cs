@@ -39,5 +39,9 @@ app.UseRouting();
 // Apply CORS policy
 app.UseCors("AllowWebApp");
 
-app.UseHttpsRedirection();
-app.Run();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection(); // Use this only if HTTPS is configured properly
+}
+
+app.Run("http://0.0.0.0:5105");
