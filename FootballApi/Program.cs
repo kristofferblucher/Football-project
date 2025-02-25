@@ -16,9 +16,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowWebApp",
         policy => policy
-            .WithOrigins("http://localhost:5173", "https://football-project.onrender.com") // Add your frontend URL here
+            .WithOrigins("http://localhost:5173", "https://football-project.onrender.com") 
             .AllowAnyHeader()
-            .AllowAnyMethod());
+            .AllowAnyMethod()
+            .AllowCredentials()); // Added to support cookies and credentials if needed
 });
 
 var app = builder.Build();
@@ -30,13 +31,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseRouting();
-
-// Apply CORS policy
+// Apply CORS policy before routing
 app.UseCors("AllowWebApp");
 
-// Ensure HTTP redirection works correctly for production
-app.UseHttpsRedirection();
+// Apply HTTPS redirection only if HTTPS is configured properly
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+
+app.UseRouting();
+
+// Ensure authorization is applied if needed (optional)
+app.UseAuthorization();
 
 app.MapControllers();
 

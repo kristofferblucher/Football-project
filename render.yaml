@@ -4,7 +4,6 @@ services:
     env: static
     staticPublishPath: /build
     buildCommand: npm install && npm run build
-    startCommand: npm start
     envVars:
       - key: VITE_API_URL
         value: "https://football-backend.onrender.com"
