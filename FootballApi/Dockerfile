@@ -15,7 +15,11 @@ FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/out ./
 
-# Expose port 5000 for the API
+# Expose port 5105 for the API
 EXPOSE 5105
-ENV ASPNETCORE_URLS=https://+:5105
+
+# Use HTTP instead of HTTPS for the container environment
+ENV ASPNETCORE_URLS=http://+:5105
+ENV ASPNETCORE_ENVIRONMENT=Production
+
 ENTRYPOINT ["dotnet", "FootballApi.dll"]
