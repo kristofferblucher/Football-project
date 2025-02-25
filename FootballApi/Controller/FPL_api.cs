@@ -15,7 +15,7 @@ public class PlayersController : ControllerBase
         _httpClient = httpClient;
     }
 
-    [HttpGet("players")]
+    [HttpGet]
 public async Task<IActionResult> GetPlayers()
 {
     string apiUrl = "https://fantasy.premierleague.com/api/bootstrap-static/";

@@ -11,9 +11,7 @@ function PlayerList({ onFavoriteToggle, favoritePlayers }) {
     const [minPrice, setMinPrice] = useState('');
     const [maxPrice, setMaxPrice] = useState('');
 
-    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5105";
-
-fetch(`${API_URL}/players`)
+    const API_URL = import.meta.env.VITE_API_URL  || "http://localhost:5105";
 
 
     useEffect(() => {
