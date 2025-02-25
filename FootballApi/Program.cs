@@ -11,33 +11,20 @@ builder.Services.AddHttpClient();
 builder.Services.AddControllers();
 builder.Services.AddHttpClient<PlayerService>();
 
-// Configure CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowWebApp",
         policy => policy
-            .WithOrigins("http://localhost:5173", "https://football-project.onrender.com","https://football-frontend-kblu.onrender.com" ) 
+            .WithOrigins("https://football-frontend-kblu.onrender.com", "http://localhost:5173") // Frontend URLs
             .AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowCredentials()); // Added to support cookies and credentials if needed
+            .AllowAnyMethod());
 });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-// Apply CORS policy before routing
-app.UseCors("AllowWebApp");
-
-
 app.UseRouting();
-
-// Ensure authorization is applied if needed (optional)
+app.UseCors("AllowWebApp"); // Apply CORS before routing
+app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
