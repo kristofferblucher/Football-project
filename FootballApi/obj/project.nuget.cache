@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C3+MYbDMy8Q=",
+  "dgSpecHash": "ixjH9fmYQEA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\KBluch\\Documents\\Football-project\\FootballApi\\FootballApi.csproj",
+  "projectFilePath": "C:\\Users\\KBluch\\Documents\\Football-project\\footballapi\\FootballApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\KBluch\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.0\\microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
     "C:\\Users\\KBluch\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.2\\microsoft.entityframeworkcore.9.0.2.nupkg.sha512",
