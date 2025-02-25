@@ -240,3 +240,14 @@ button {
   margin-top: 20px;
 }
 
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.price-filter {
+  display: flex;
+  gap: 10px;
+}
